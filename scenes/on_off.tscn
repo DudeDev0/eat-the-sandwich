@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dp0w8vqivqcbu"]
+
+[ext_resource type="Script" uid="uid://wwgrhf4bne3v" path="res://scripts/on_off.gd" id="1_h2f0v"]
+
+[node name="OnOff" type="Area2D" unique_id=391375238]
+script = ExtResource("1_h2f0v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
