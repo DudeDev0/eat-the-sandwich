@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 
@@ -11,6 +12,8 @@ var was_on_floor: bool = false
 @onready var sprite: Sprite2D = $Sprite
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var coyote_timer: Timer = $CoyoteTimer
+
+@onready var start_pos: Vector2 = global_position
 
 
 func _physics_process(delta: float) -> void:
@@ -45,6 +48,10 @@ func _physics_process(delta: float) -> void:
 	was_on_floor = is_on_floor()
 
 	move_and_slide()
+
+
+func respawn() -> void:
+	global_position = start_pos
 
 
 func _on_coyote_timer_timeout() -> void:

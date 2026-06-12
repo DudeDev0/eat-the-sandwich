@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cdc0lpmbfcc62"]
+
+[ext_resource type="Script" uid="uid://calihl8r8d205" path="res://scripts/sandwich.gd" id="1_5bfki"]
+[ext_resource type="Texture2D" uid="uid://b5g5ekd0epnof" path="res://textures/sandwich.png" id="1_iu27d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iu27d"]
+radius = 7.0
+
+[node name="Sandwich" type="Area2D" unique_id=1306360607]
+script = ExtResource("1_5bfki")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=714362459]
+texture_filter = 1
+texture = ExtResource("1_iu27d")
+
+[node name="Hurtbox" type="CollisionShape2D" parent="." unique_id=2010861694]
+shape = SubResource("CircleShape2D_iu27d")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
